@@ -11,6 +11,7 @@ body {
   background: #fff;
   border-bottom: 1px solid #e2e2e5;
   padding: 28px 20px;
+  position: relative;
   text-align: center;
 }
 

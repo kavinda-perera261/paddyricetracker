@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify, session
+from flask import Flask, render_template, request, jsonify, session, redirect
 import os
 from dotenv import load_dotenv
 import mysql.connector
@@ -3613,6 +3613,14 @@ def api_update_user(user_id):
         return jsonify({'error': str(err)}), 500
 
 
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect('/')
+
+
 if __name__ == '__main__':
     init_db()
     app.run(debug=True)
+
+
